@@ -7,6 +7,14 @@ const routes = [
     ]
   },
 
+  {
+    path: '/signup',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { name: 'Signup', path: '', component: () => import('pages/SignupPage.vue') }
+    ]
+  },
+
   // Always leave this as last one,
   // but you can also remove it
   {
