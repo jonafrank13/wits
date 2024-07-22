@@ -10,6 +10,7 @@
 
 
 const { configure } = require('quasar/wrappers');
+const { mergeConfig } = require('vite');
 
 
 module.exports = configure(function (/* ctx */) {
@@ -58,7 +59,7 @@ module.exports = configure(function (/* ctx */) {
 
       // rebuildCache: true, // rebuilds Vite/linter/etc cache on startup
 
-      publicPath: '/',
+      publicPath: '/wits/',
       // analyze: true,
       // env: {},
       // rawDefine: {}
@@ -67,7 +68,11 @@ module.exports = configure(function (/* ctx */) {
       // polyfillModulePreload: true,
       // distDir
 
-      // extendViteConf (viteConf) {},
+      // extendViteConf (viteConf) {
+      //   viteConf.build = mergeConfig(viteConf.build, {
+      //     base: '/'
+      //   })
+      // },
       // viteVuePluginOptions: {},
 
       vitePlugins: [

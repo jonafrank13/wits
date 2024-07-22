@@ -17,7 +17,7 @@
       class="glossy q-px-xl q-py-xl"
       color="primary"
       label="Start Learning"
-      @click="$router.push({ name: 'Signup' })"
+      @click="$router.push({ name: 'ChooseSignup' })"
     />
     <q-btn
       no-caps
