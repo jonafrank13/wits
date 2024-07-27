@@ -16,6 +16,7 @@
         unelevated
         color="accent"
         label="Signup"
+        @click="$router.push({ name: 'Verify' })"
       />
     </div>
   </q-page>

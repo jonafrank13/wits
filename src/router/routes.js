@@ -23,6 +23,30 @@ const routes = [
     ]
   },
 
+  {
+    path: '/verify',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { name: 'Verify', path: '', component: () => import('src/pages/VerifyPage.vue') }
+    ]
+  },
+
+  {
+    path: '/know',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { name: 'Know', path: '', component: () => import('src/pages/KnowPage.vue') }
+    ]
+  },
+
+  {
+    path: '/landing',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { name: 'Landing', path: '', component: () => import('src/pages/LandingPage.vue') }
+    ]
+  },
+
   // Always leave this as last one,
   // but you can also remove it
   {

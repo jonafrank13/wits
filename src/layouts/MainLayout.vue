@@ -21,7 +21,7 @@
       <router-view />
     </q-page-container>
 
-    <q-footer>
+    <q-footer bordered>
       <q-tabs
         no-caps
         active-color="secondary"
