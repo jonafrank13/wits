@@ -1,42 +1,27 @@
 <template>
   <q-page class="flex justify-between column">
     <div>
-      <h5 class="text-h5 text-center">Getting to know you</h5>
-      <h4
-        class="text-h4 text-center text-grey"
+      <h4 class="text-h4 text-bold text-center q-mb-sm">
+        {{ qIndex > 0 ? "Getting to know you" : questions[qIndex].question }}
+      </h4>
+      <p
+        v-if="qIndex > 0"
+        class="text-center q-mx-sm text-bold text-grey-8"
         v-html="questions[qIndex].question"
-      ></h4>
+      ></p>
       <div class="flex column">
         <q-btn
           v-for="option in questions[qIndex].options"
           :key="option"
           unelevated
           rounded
-          color="primary"
+          no-caps
+          color="grey"
           :label="option"
-          class="q-ma-sm"
+          class="q-my-sm q-mx-xl q-pa-md text-black text-bold text-h6"
           @click="moveQuestion"
         />
       </div>
-    </div>
-    <div class="flex column">
-      <q-btn
-        class="q-mx-md q-my-sm"
-        rounded
-        unelevated
-        color="primary"
-        label="Next"
-        icon-right="forward"
-      />
-      <q-btn
-        class="q-mx-md q-my-sm"
-        rounded
-        unelevated
-        color="secondary"
-        label="Skip"
-        icon-right="skip_next"
-        @click="$router.push({ name: 'Signup' })"
-      />
     </div>
   </q-page>
 </template>

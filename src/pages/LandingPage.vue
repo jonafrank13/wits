@@ -1,12 +1,20 @@
 <template>
-  <q-page class="flex flex-start column bg-accent q-px-md q-pb-lg">
-    <h4 class="text-h4 text-center text-secondary">Welcome Reynard!</h4>
-    <h5 class="text-h5 text-center text-white">Your Wits streak (1)</h5>
+  <q-page class="flex flex-start column bg-primary q-px-md q-pb-lg">
+    <h4 class="text-h4 q-mb-sm text-center text-secondary cooper_italics">
+      Welcome Reynard!
+    </h4>
+    <h5 class="text-h5 text-center text-bold text-white">
+      Your Wits streak <q-icon name="bolt" color="white" size="2rem" />
+      <q-avatar color="white" size="28px" text-color="accent">50</q-avatar>
+    </h5>
     <q-input
+      color="accent"
+      standout
       rounded
       outlined
       v-model="text"
       label="Search for subjects offered by tutors"
+      class="q-mx-sm text-caption"
     >
       <template v-slot:prepend>
         <q-icon name="search" />
@@ -15,16 +23,10 @@
         <q-icon name="close" />
       </template>
     </q-input>
-    <h6 class="text-h6 text-center text-white">Popular Subjects:</h6>
+    <h6 class="text-h6 text-center text-white q-mb-sm">Popular Subjects:</h6>
     <div class="flex row justify-center">
       <div class="flex column q-ma-md">
-        <q-btn
-          unelevated
-          class="q-ma-sm"
-          rounded
-          color="primary"
-          label="Math"
-        />
+        <q-btn unelevated class="q-ma-sm" rounded color="accent" label="Math" />
         <q-btn
           unelevated
           class="q-ma-sm"
@@ -47,19 +49,20 @@
     <q-card
       v-for="tutor of tutors"
       :key="tutor.id"
-      class="q-ma-md"
+      class="q-ma-md rounded-corners"
       flat
       bordered
+      rounded
     >
       <q-card-section horizontal>
         <q-card-section class="col-5 flex flex-center">
-          <q-img :src="tutor.photo" />
+          <q-img height="105px" width="120px" :src="tutor.photo" />
         </q-card-section>
         <q-card-section>
-          <p>Name: {{ tutor.name }}</p>
-          <p>Qualifications: {{ tutor.qualification }}</p>
+          <p><b>Name</b>: {{ tutor.name }}</p>
+          <p><b>Qualifications</b>: {{ tutor.qualification }}</p>
           <p>
-            Ratings:
+            <b>Ratings</b>:
             <q-rating :model-value="tutor.ratings" color="black" :max="5" /> ({{
               tutor.totalRatings
             }})
@@ -69,9 +72,19 @@
 
       <q-separator />
 
-      <q-card-actions align="around">
-        <q-btn flat icon="toggle_on" label="active" />
-        <q-btn flat color="primary" icon="calendar"> Book Session </q-btn>
+      <q-card-actions class="q-px-md" align="between">
+        <q-btn unelevated no-caps rounded color="black" class="q-px-md">
+          Start Session
+        </q-btn>
+        <q-btn
+          unelevated
+          no-caps
+          rounded
+          color="primary"
+          class="q-px-md text-black"
+        >
+          Check All Sessions
+        </q-btn>
       </q-card-actions>
     </q-card>
   </q-page>

@@ -3,7 +3,7 @@ const routes = [
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/IndexPage.vue') }
+      { name: 'Index', path: '', component: () => import('pages/IndexPage.vue') }
     ]
   },
 
@@ -44,6 +44,14 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { name: 'Landing', path: '', component: () => import('src/pages/LandingPage.vue') }
+    ]
+  },
+
+  {
+    path: '/book',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { name: 'BookSession', path: '', component: () => import('src/pages/BookSessionPage.vue') }
     ]
   },
 

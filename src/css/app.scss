@@ -1,1 +1,18 @@
 // app global css in SCSS form
+
+@font-face {
+  font-family: CooperBlackItalicsBT;
+  src: url("../assets/Cooper_Black_Italic_BT.ttf");
+}
+
+body {
+  font-family: "DM Sans";
+}
+
+.cooper_italics {
+  font-family: "CooperBlackItalicsBT", sans-serif !important;
+}
+
+.rounded-corners {
+  border-radius: 30px;
+}

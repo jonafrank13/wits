@@ -1,19 +1,23 @@
 <template>
-  <q-page class="flex flex-start column">
-    <h5 class="text-h5 text-center">Create an account</h5>
+  <q-page class="flex flex-start column bg-white">
+    <h4 class="text-h4 text-center text-bold">Create an account</h4>
     <q-btn
-      class="q-mx-md q-my-sm"
+      class="q-mx-xl q-my-md q-py-md"
       rounded
       unelevated
-      color="primary"
-      label="Signup with apple"
+      no-caps
+      color="black"
+      label="Continue with apple"
       icon="fa-brands fa-apple"
+      @click="$router.push({ name: 'Signup' })"
     />
+    <h4 class="text-h4 text-center text-bold q-my-md">Or</h4>
     <q-btn
-      class="q-mx-md q-my-sm"
+      class="q-mx-xl q-my-md q-py-md"
       rounded
       unelevated
-      color="secondary"
+      no-caps
+      color="accent"
       label="Continue with email"
       icon="email"
       @click="$router.push({ name: 'Signup' })"
