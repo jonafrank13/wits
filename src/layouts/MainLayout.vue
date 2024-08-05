@@ -35,11 +35,36 @@
         align="justify"
         style="background: #ecf6fa"
       >
-        <q-tab name="home" icon="home" label="Home" />
-        <q-tab name="students" icon="groups" label="Students" />
-        <q-tab name="bookings" icon="calendar_today" label="Bookings" />
-        <q-tab name="chat" icon="chat_bubble_outline" label="Chat" />
-        <q-tab name="account" icon="account_circle" label="Account" />
+        <q-tab
+          name="home"
+          @click="$router.push({ name: 'Landing' })"
+          icon="home"
+          label="Home"
+        />
+        <q-tab
+          name="tutors"
+          @click="$router.push({ name: 'Landing' })"
+          icon="groups"
+          label="Tutors"
+        />
+        <q-tab
+          name="bookings"
+          @click="$router.push({ name: 'Session' })"
+          icon="calendar_today"
+          label="Bookings"
+        />
+        <q-tab
+          name="chat"
+          @click="$router.push({ name: 'Chat' })"
+          icon="chat_bubble_outline"
+          label="Chat"
+        />
+        <q-tab
+          name="account"
+          @click="$router.push({ name: 'Account' })"
+          icon="account_circle"
+          label="Account"
+        />
       </q-tabs>
     </q-footer>
   </q-layout>

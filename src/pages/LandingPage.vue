@@ -82,6 +82,7 @@
           rounded
           color="primary"
           class="q-px-md text-black"
+          @click="$router.push({ name: 'BookSession' })"
         >
           Check All Sessions
         </q-btn>

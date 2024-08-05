@@ -55,6 +55,24 @@ const routes = [
     ]
   },
 
+
+  {
+    path: '/session',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { name: 'Session', path: '', component: () => import('src/pages/SessionPage.vue') }
+    ]
+  },
+
+  {
+    path: '/chat',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { name: 'Chat', path: '', component: () => import('src/pages/ChatPage.vue') }
+    ]
+  },
+
+
   // Always leave this as last one,
   // but you can also remove it
   {
