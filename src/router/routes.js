@@ -72,6 +72,14 @@ const routes = [
     ]
   },
 
+  {
+    path: '/account',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { name: 'Account', path: '', component: () => import('src/pages/AccountPage.vue') }
+    ]
+  },
+
 
   // Always leave this as last one,
   // but you can also remove it
