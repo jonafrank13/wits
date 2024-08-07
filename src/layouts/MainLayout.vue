@@ -43,13 +43,13 @@
         />
         <q-tab
           name="tutors"
-          @click="$router.push({ name: 'Landing' })"
+          @click="$router.push({ name: 'Session' })"
           icon="groups"
           label="Tutors"
         />
         <q-tab
           name="bookings"
-          @click="$router.push({ name: 'Session' })"
+          @click="$router.push({ name: 'BookSession' })"
           icon="calendar_today"
           label="Bookings"
         />

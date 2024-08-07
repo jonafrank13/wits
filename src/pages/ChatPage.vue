@@ -86,55 +86,87 @@
       </q-list>
     </template>
     <template v-else>
-      <h6 class="text-h6 text-center text-bold">John Wong</h6>
-      <div class="q-mx-md q-mb-xl">
-        <q-chat-message
-          name="me"
-          avatar="https://cdn.quasar.dev/img/avatar3.jpg"
-          :text="['hey, how are you?']"
-          stamp="7 minutes ago"
-          sent
-          bg-color="amber-7"
-        />
-        <q-chat-message
-          name="John Wong"
-          avatar="https://cdn.quasar.dev/img/avatar3.jpg"
-          :text="[
-            'doing fine, how r you?',
-            'I am trying to figure out the perimeter of a triangle',
-          ]"
-          size="6"
-          stamp="4 minutes ago"
-          text-color="white"
-          bg-color="primary"
-        />
-        <q-chat-message
-          name="John Wong"
-          avatar="https://cdn.quasar.dev/img/avatar3.jpg"
-          :text="['Can you help?']"
-          stamp="1 minutes ago"
-          size="8"
-          text-color="white"
-          bg-color="primary"
-        />
-        <q-chat-message
-          name="John Wong"
-          avatar="https://cdn.quasar.dev/img/avatar3.jpg"
-          text-color="white"
-          bg-color="primary"
+      <div style="height: 85vh" class="flex column justify-between">
+        <div style="overflow: scroll">
+          <h6 class="text-h6 text-center text-bold q-ma-sm">John Wong</h6>
+          <div class="q-mx-md">
+            <q-chat-message
+              name="me"
+              avatar="https://cdn.quasar.dev/img/avatar6.jpg"
+              :text="['hey, how are you?']"
+              stamp="7 minutes ago"
+              sent
+              bg-color="amber-7"
+            />
+            <q-chat-message
+              name="John Wong"
+              avatar="https://cdn.quasar.dev/img/avatar3.jpg"
+              :text="[
+                'doing fine, how r you?',
+                'I am trying to figure out the perimeter of a triangle',
+              ]"
+              size="6"
+              stamp="4 minutes ago"
+              text-color="white"
+              bg-color="primary"
+            />
+            <q-chat-message
+              name="John Wong"
+              avatar="https://cdn.quasar.dev/img/avatar3.jpg"
+              :text="['Can you help?']"
+              stamp="1 minutes ago"
+              size="8"
+              text-color="white"
+              bg-color="primary"
+            />
+            <q-chat-message
+              name="John Wong"
+              avatar="https://cdn.quasar.dev/img/avatar3.jpg"
+              text-color="white"
+              bg-color="primary"
+            >
+              <q-spinner-dots size="2rem" />
+            </q-chat-message>
+            <q-chat-message
+              v-for="msg of messages"
+              :key="msg"
+              name="me"
+              avatar="https://cdn.quasar.dev/img/avatar6.jpg"
+              :text="[msg]"
+              stamp="0 minutes ago"
+              sent
+              bg-color="amber-7"
+            />
+          </div>
+        </div>
+        <q-input
+          class="q-mx-md flex-end"
+          @keyup.enter="
+            messages.push(text);
+            text = '';
+          "
+          rounded
+          outlined
+          v-model="text"
         >
-          <q-spinner-dots size="2rem" />
-        </q-chat-message>
+          <template v-slot:append>
+            <q-icon name="mic" class="cursor-pointer" />
+            <q-icon name="photo_camera" class="cursor-pointer" />
+          </template>
+          <template v-slot:after>
+            <q-btn
+              @click="
+                messages.push(text);
+                text = '';
+              "
+              round
+              dense
+              flat
+              icon="send"
+            />
+          </template>
+        </q-input>
       </div>
-      <q-input class="q-mt-xl q-mx-md flex-end" rounded outlined v-model="text">
-        <template v-slot:append>
-          <q-icon name="mic" class="cursor-pointer" />
-          <q-icon name="photo_camera" class="cursor-pointer" />
-        </template>
-        <template v-slot:after>
-          <q-btn round dense flat icon="send" />
-        </template>
-      </q-input>
     </template>
   </q-page>
 </template>
@@ -147,4 +179,6 @@ defineOptions({
 });
 
 const chat = ref(true);
+const text = ref("");
+const messages = ref([]);
 </script>

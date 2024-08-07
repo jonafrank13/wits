@@ -6,6 +6,16 @@
       width="90%"
       src="../assets/Session.png"
     />
+    <q-btn
+      unelevated
+      color="accent"
+      icon="insert_link"
+      no-caps
+      href="https://meet.google.com/mhr-cibw-fjp"
+      target="_blank"
+      class="q-my-md"
+      label="Open Meeting"
+    />
     <q-input
       v-model="textareaModel"
       standout
